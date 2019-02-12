@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+/*
 func hello(){
 print("Hello")
 }
@@ -67,5 +67,59 @@ func si(amount: Float = 100, rate: Float, noOfYear: Float = 2) -> Float
 print(si(amount: 1000, rate: 2.5, noOfYear: 10))
 print(si(amount: 1000, rate: 2.5))//default value for third parameter
 print(si(rate: 2.0))
+*/
+
+//return Reverse of given integer(N)
+//Input : n = 23454 output = 45432
+//Input : n = 346798 output = 897643
 
 
+func reverse(n: Int) -> Int
+{
+    var rev = 0
+    var num = n
+    
+    while num != 0 {
+        rev = (rev * 10) + (num % 10)
+        num = Int(num / 10)
+    }
+    return rev
+}
+print(reverse(n: 23453))
+
+
+func disply(n : Int) -> Int
+{
+    if n == 0{
+        return 0
+    }
+    print(n)
+    return disply(n: n - 1)
+}
+
+disply(n: 5)
+
+
+
+func displayN(n : Int)
+{
+    if n != 0{
+        displayN(n: n - 1)
+        print(n)
+    }
+}
+
+
+print("PRINT 1st N number")
+displayN(n: 5)
+
+func sumN(n : Int) -> Int
+{
+    if n == 0
+    {
+        return 0
+    }else
+    {
+        return n + sumN(n: -1)
+    }
+}
